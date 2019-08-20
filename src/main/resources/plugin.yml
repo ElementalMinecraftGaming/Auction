@@ -1,0 +1,7 @@
+name: Auction
+main: dev.anullihate.Auction
+author: anullihate
+version: "${pom.version}-dev"
+api: ["1.0.0"]
+depend:
+  - EconomyAPI
