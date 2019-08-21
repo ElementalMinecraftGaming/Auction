@@ -33,7 +33,6 @@ public class AuctionBuyList extends FormWindowSimple implements UI {
                 String itemData = itemDataSection.getString("item-data");
                 String buyNowPrice = itemDataSection.getString("buynow-price");
                 String biddingPrice = itemDataSection.getString("bidding-price");
-                String[] itemDataArray = itemData.split(":");
                 int itemCount = itemDataSection.getInt("item-count");
 
                 //enchantments
@@ -59,7 +58,7 @@ public class AuctionBuyList extends FormWindowSimple implements UI {
                 }
 
                 StringBuilder stringBuilder = new StringBuilder(20);
-                stringBuilder.append(newItem.getName()).append(" x").append(newItem.getCount()).append("\n");
+                stringBuilder.append(newItem.getName()).append(String.format(" x%s", newItem.getCount())).append("\n");
                 stringBuilder.append("「Price: ")
                         .append(String.format("Buy[%s]", buyNowPrice)).append("-").append(String.format("Bid[%s]", biddingPrice))
                         .append(String.format(" Seller: %s」", seller));

@@ -37,7 +37,7 @@ public class AuctionSellInput extends FormWindowCustom implements UI {
 
     public void onPlayerFormRespondedEvent(PlayerFormRespondedEvent event) {
         Player player = event.getPlayer();
-        String playerName = player.getDisplayName();
+        String playerName = player.getName();
 
         UUID itemUUID = UUID.randomUUID();
 

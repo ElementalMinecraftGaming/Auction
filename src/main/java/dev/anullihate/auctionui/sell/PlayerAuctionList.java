@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class PlayerAuctionList extends FormWindowSimple implements UI {
 
     public PlayerAuctionList(Player player) {
-        super(String.format("%s's Auctions", player.getDisplayName()), "");
+        super(String.format("%s's Auctions", player.getName()), "");
 
-        String playerName = player.getDisplayName();
+        String playerName = player.getName();
 
         ConfigSection playerAuction = Auction.configAuctions.getSection(player.getDisplayName());
         ConfigSection playerItems = playerAuction.getSection("items");

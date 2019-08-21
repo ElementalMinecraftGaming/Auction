@@ -58,7 +58,7 @@ public class AuctionBuyDetails extends FormWindowSimple implements UI {
         int id = getResponse().getClickedButtonId();
 
         if (id == 0) {
-            if (event.getPlayer().getDisplayName().equals(seller)) {
+            if (event.getPlayer().getName().equals(seller)) {
                 event.getPlayer().sendMessage("sorry buy you can't purchase your own auction");
                 return;
             }
@@ -73,7 +73,7 @@ public class AuctionBuyDetails extends FormWindowSimple implements UI {
             double buynowPrice = Double.parseDouble(itemDataSection.getString("buynow-price"));
 
             EconomyAPI.getInstance().addMoney(seller, buynowPrice);
-            EconomyAPI.getInstance().reduceMoney(event.getPlayer().getDisplayName(), buynowPrice);
+            EconomyAPI.getInstance().reduceMoney(event.getPlayer().getName(), buynowPrice);
 
             ConfigSection itemsSection = sellerSection.getSection("items");
             itemsSection.remove(itemUUID);
