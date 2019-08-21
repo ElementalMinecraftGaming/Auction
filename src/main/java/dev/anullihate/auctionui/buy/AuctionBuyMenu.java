@@ -23,19 +23,6 @@ public class AuctionBuyMenu extends FormWindowSimple implements UI {
     public void onPlayerFormRespondedEvent(PlayerFormRespondedEvent event) {
         int id = getResponse().getClickedButtonId();
 
-        ConfigSection playerSections = Auction.configAuctions.getSections();
-
-        addButton(new ElementButton("< Back"));
-
-        playerSections.forEach((player, data) -> {
-            ConfigSection playerSection = Auction.configAuctions.getSection(player);
-            ConfigSection itemSections = playerSection.getSection("items");
-
-            itemSections.forEach((itemUUID, item) -> {
-               //
-            });
-        });
-
         if (id == 0) {
             event.getPlayer().showFormWindow(new AuctionBuyList());
         } else if (id == 1) {

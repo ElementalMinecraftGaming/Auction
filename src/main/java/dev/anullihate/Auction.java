@@ -44,5 +44,7 @@ public class Auction extends PluginBase implements Listener {
             return;
         }
         ((UI)event.getWindow()).onPlayerFormRespondedEvent(event);
+
+        Auction.configAuctions.save();
     }
 }
