@@ -28,4 +28,4 @@ jobs:
       if: success()
       with:
         name: Auction
-        path: target/Auction.jar
+        path: target/auctions.jar
